@@ -2,11 +2,10 @@
 
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 const isProduction = process.env.NODE_ENV == "production";
 
 const config = {
-  entry: "./src/index.ts",
+  entry: { main: "./src/index.tsx", app: "./src/App.tsx" },
   output: {
     filename: "[name].ts",
     path: path.resolve(__dirname, "dist"),
@@ -19,14 +18,6 @@ const config = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "index.html",
-    }),
-    new ForkTsCheckerWebpackPlugin({
-      typescript: {
-        diagnosticOptions: {
-          semantic: true,
-          syntactic: true,
-        },
-      },
     }),
     // Add your plugins here
     // Learn more about plugins from https://webpack.js.org/configuration/plugins/
