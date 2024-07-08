@@ -7,7 +7,7 @@ const isProduction = process.env.NODE_ENV == "production";
 const config = {
   entry: { main: "./src/index.tsx", app: "./src/App.tsx" },
   output: {
-    filename: "[name].ts",
+    filename: "[name].js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
   },
