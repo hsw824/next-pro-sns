@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const isProduction = process.env.NODE_ENV == "production";
 
 const config = {
-  entry: { main: "./src/index.tsx", app: "./src/App.tsx" },
+  entry: "./src/index.tsx",
   output: {
     filename: "[name].js",
     path: path.resolve(__dirname, "dist"),
