@@ -1,12 +1,13 @@
-import React from "react";
-import { createRoot } from "react-dom/client";
+import { createRoot } from 'react-dom/client';
+import React from 'react';
+import App from './App';
+import ErrorBoundary from './ErrorBoundary';
 
-import App from "./App";
-
-const app = createRoot(document.getElementById("app") as HTMLElement);
-console.log("실행이 되나?");
+const app = createRoot(document.getElementById('app') as HTMLElement);
 app.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+	<React.StrictMode>
+		<ErrorBoundary fallback={<h1>잘못된 접근입니다!</h1>}>
+			<App />
+		</ErrorBoundary>
+	</React.StrictMode>,
 );
