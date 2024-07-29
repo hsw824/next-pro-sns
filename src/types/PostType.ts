@@ -10,10 +10,16 @@ interface Comment {
 export interface PostType {
 	userId: string;
 	postTime: string;
-	imgs: string[];
 	isLiked: boolean;
 	comment: Comment[];
 	isSaved: boolean;
 	postContent: string;
 	totalLike: number;
+	postId: string;
+}
+
+export interface ImageType {
+	postId: string;
+	postImgSrc: string;
+	postImgTitle: string;
 }

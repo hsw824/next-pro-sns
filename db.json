@@ -3,31 +3,40 @@
       {
         "userId": "hsw824",
         "postTime": "2분전",
-        "imgs": [],
         "isLiked": false,
         "comment": [],
         "isSaved": false,
         "postContent": "ㅜㅜ",
-        "totalLike": 3
+        "totalLike": 3,
+        "postId" : 1
       },
       {
         "userId": "ghdtjddn0824",
         "postTime": "20분전",
-        "imgs": [],
         "isLiked": false,
         "comment": [],
         "isSaved": false,
         "postContent": "흑흑",
-        "totalLike": 3
+        "totalLike": 3,
+        "postId" : 2
       },
       {
         "userId": "swh00012",
         "postTime": "12분전",
-        "imgs": [],
         "isLiked": false,
         "comment": [],
         "isSaved": false,
         "postContent": "엉엉",
-        "totalLike": 3
+        "totalLike": 3,
+        "postId" : 3
+
       }
-    ]}
+    ],
+    "postImg":[
+      {
+        "postId" : 1,
+        "postImgSrc": "",
+        "postImgTitle" : "강아지"
+      }
+    ]
+  }
