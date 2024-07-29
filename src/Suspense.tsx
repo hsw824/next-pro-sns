@@ -1,10 +1,16 @@
-import { ReactNode } from 'react';
+import { Component, ErrorInfo, ReactNode } from 'react';
 
-const createResource = (promise: Promise<any>) => {
-	return wrapPromise(promise);
-};
+interface SuspenseProps {
+	fallback: React.ReactNode;
+	children: React.ReactNode;
+}
 
-function wrapPromise(promise: Promise<any>) {
+interface SuspenseState {
+	pending: boolean;
+	error?: any;
+}
+
+const wrapPromise = (promise: Promise<any>) => {
 	let status: 'pending' | 'success' | 'error' = 'pending';
 
 	let result: any;
@@ -31,22 +37,62 @@ function wrapPromise(promise: Promise<any>) {
 			}
 		},
 	};
+};
+
+export const createResource = (promise: Promise<any>) => {
+	return wrapPromise(promise);
+};
+
+function isPromise(item: any) {
+	return item && item instanceof Promise;
 }
 
-export default function Suspense({
-	fallback,
-	children,
-}: {
-	fallback: ReactNode;
-	children: ReactNode;
-}) {
-	// promise 객체가 반환되면 이를 캐치한다.
-	// 캐치한 promise가 pending상태라면 fallback을 실행한다.
-	// 캐치한 promise가 resolve상태라면 children을 보여준다.(children이 랜더링된다.)
-	// 캐치한 promise가 rejected되고 error boundary가 실행된 상태라면 error boundary로 넘어간다.
+class ReactSuspense extends Component<SuspenseProps, SuspenseState> {
+	private mounted = false;
 
-	// 자식 컴포넌트가 여러개이고, 비동기가 여러개일때는 어떻게 조작?
-	// 자식 컴포넌트의 비동기를 어떻게 catch?
+	state: SuspenseState = {
+		pending: false,
+	};
 
-	return <>{children}</>;
+	constructor(props: SuspenseProps) {
+		super(props);
+	}
+
+	public componentDidMount(): void {
+		this.mounted = true;
+	}
+
+	public componentWillUnmount(): void {
+		this.mounted = false;
+	}
+	public componentDidCatch(p: any): void {
+		if (!this.mounted) return;
+		if (isPromise(p.suspender)) {
+			if (p.status === 'pending') {
+				p.suspender.then(
+					() => {
+						this.state.pending && this.setState({ pending: false });
+					},
+					() => {
+						throw new Error('요청 실패');
+					},
+				);
+				this.setState({ pending: true });
+			}
+		}
+	}
+	public componentDidUpdate(): void {
+		if (this.state.pending && this.state.error) {
+			throw this.state.error;
+		}
+	}
+
+	public render() {
+		if (this.state.pending) {
+			return this.props.fallback;
+		}
+		return this.props.children;
+	}
 }
+
+export default ReactSuspense;
