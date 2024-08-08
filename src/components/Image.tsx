@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 const MAX_TRY_COUNT = 3;
 
-export default function Image({
+export default function ImageContainer({
 	src,
 	alt = '',
 }: {
@@ -12,7 +12,7 @@ export default function Image({
 	const [tryCount, setTryCount] = useState(0);
 	const [status, setStatus] = useState<'error' | 'load' | 'success'>('load');
 	useEffect(() => {
-		const img: HTMLImageElement = new window.Image();
+		const img: HTMLImageElement = new Image();
 
 		img.src = src;
 
