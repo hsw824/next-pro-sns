@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    width: 320px;
+    background-color: aquamarine;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+.carousel-wrapper{
+    width: 100%;
+    display: flex;
+}
+
+.btn{
+    position: absolute;
+    z-index: 1;
+    top: 45%;
+}
+.next{
+    right: 0;
+}
