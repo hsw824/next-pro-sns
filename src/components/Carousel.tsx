@@ -1,5 +1,5 @@
 import ImageContainer from './Image';
-import './Carousel.scss';
+import styles from './Carousel.module.scss';
 import { useEffect, useRef, useState } from 'react';
 // import styles from './Carousel.module.scss';
 // 버튼 생성
@@ -54,7 +54,7 @@ export default function Carousel({ imgList }: { imgList: ImgListType[] }) {
 	};
 
 	return (
-		<div className="container">
+		<div className={styles.container}>
 			<button className="btn" onClick={() => handleSlider(-1)}>
 				이전
 			</button>

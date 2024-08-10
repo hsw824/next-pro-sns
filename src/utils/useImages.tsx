@@ -22,7 +22,6 @@ export const useImages = (postId: string) => {
 			.catch(() => {
 				tryCount += 1;
 				if (tryCount > 3) {
-					console.log('err', tryCount);
 					setImgSrc([
 						{
 							postId: '1',
