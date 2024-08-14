@@ -56,7 +56,7 @@ export default function App() {
 	];
 	return (
 		<div>
-			<Carousel imgList={data} />
+			<Carousel imgList={data} autoSlideSec={2} />
 		</div>
 	);
 }

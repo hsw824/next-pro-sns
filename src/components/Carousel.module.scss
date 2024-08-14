@@ -1,6 +1,9 @@
 *{
     margin: 0;
     padding: 0;
+    li{
+        list-style: none;
+    }
 }
 
 .container{
@@ -10,7 +13,7 @@
     overflow: hidden;
     position: relative;
 }
-.carousel-wrapper{
+.carouselWrapper{
     width: 100%;
     display: flex;
 }
