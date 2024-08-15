@@ -3,7 +3,6 @@ import { PostType, ImageType } from '../types/PostType';
 import { API_URL } from '../utils/apiUrl';
 import { ERROR_MESSAGE } from '../utils/errorMessage';
 
-// skipDefaultHandler는 axios를 사용하는 곳에서 보내줘야할것 같은데
 const axiosConfig: AxiosRequestConfig = {
 	baseURL: API_URL,
 	skipDefaultHandler: false,
