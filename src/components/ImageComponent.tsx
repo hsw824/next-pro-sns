@@ -1,4 +1,4 @@
-import { useImages } from './utils/useImages';
+import { useImages } from '../utils/useImages';
 
 export default function ImageComponent() {
 	const { imgSrc } = useImages('postId');
