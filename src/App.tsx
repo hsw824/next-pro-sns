@@ -1,8 +1,9 @@
-import ImageComponent from './components/ImageComponent';
-import { getPosts } from './axios/useAxios';
+import Carousel from './components/Carousel';
 
 export default function App() {
-	const data = getPosts();
-
-	return <ImageComponent />;
+	return (
+		<div>
+			<Carousel />
+		</div>
+	);
 }
