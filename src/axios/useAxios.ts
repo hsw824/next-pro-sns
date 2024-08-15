@@ -13,8 +13,8 @@ const client = axios.create(axiosConfig);
 client.interceptors.response.use(
 	(response) => response,
 	(error) => {
-		if (error.response && error.response.status) {
-			if (error.config && error.config.skipDefaultHandler) {
+		if (error.response?.status) {
+			if (error.config?.skipDefaultHandler) {
 				throw error;
 			}
 			switch (error.response.status) {

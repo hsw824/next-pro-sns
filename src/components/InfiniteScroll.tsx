@@ -48,7 +48,7 @@ export default function InfiniteScroll({
 
 		if (target.current) observer.observe(target.current);
 
-		return () => observer && observer.disconnect();
+		return () => observer?.disconnect();
 
 		// isLoading을 사용했다면 dependency를 그걸로 설정해도 되는데 suspense를 쓰니까 dependency에 어떤걸 넣어줘야할지 모르겠다. -> 일단 isLoading으로 구현
 	}, []);
