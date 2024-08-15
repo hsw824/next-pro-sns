@@ -31,7 +31,7 @@ module.exports = {
 						options: {
 							modules: {
 								namedExport: false,
-							}, // CSS 모듈 활성화
+							},
 						},
 					},
 					'sass-loader',

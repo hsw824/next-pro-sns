@@ -54,6 +54,7 @@
     "husky": "^9.0.11",
     "json-server": "^0.17.4",
     "lint-staged": "^15.2.7",
+    "mini-css-extract-plugin": "^2.9.0",
     "prettier": "^3.3.2",
     "react-refresh": "^0.14.2",
     "sass-loader": "^16.0.0",
