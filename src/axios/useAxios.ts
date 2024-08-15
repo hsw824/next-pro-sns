@@ -18,6 +18,7 @@ client.interceptors.response.use(
 			}
 			switch (error.response.status) {
 				case 400:
+					// TODO: 토스트 만들기
 					console.log(ERROR_MESSAGE.INVALID_REQUEST);
 					break;
 				case 404:
