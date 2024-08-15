@@ -2,10 +2,6 @@ import ImageContainer from './Image';
 import styles from './Carousel.module.scss';
 import { useEffect, useRef, useState } from 'react';
 
-// 1. [마지막 이미지, ...imgList, 첫번째 이미지]
-// 2. 첫번째 이미지로 가면 ...imgList의 첫번째 이미지로 전환 transition을 빈값으로 줘서 바뀌는지 모르게
-
-// autoSlide에서 정한 setInterval이랑 속임수 로딩되는 setTimeout이랑 충돌이 나는것 같은데 어떻게 해결해야할지 모르겠음
 interface ImgListType {
 	id: number;
 	alt: string;

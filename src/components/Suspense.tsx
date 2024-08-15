@@ -31,7 +31,6 @@ const wrapPromise = (promise: Promise<any>) => {
 					throw suspender;
 				case 'success':
 					throw result;
-				//error boundary 호환
 				case 'error':
 					throw result;
 			}
