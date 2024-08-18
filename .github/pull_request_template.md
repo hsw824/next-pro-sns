@@ -5,6 +5,9 @@
 - [ ] Bug Fix
 - [ ] Optimization
 - [ ] Documentation Update
+- [ ] Style
+- [ ] Build
+- [ ] Test
 
 ## PR전 체크리스트
 
