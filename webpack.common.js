@@ -1,19 +1,17 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { VanillaExtractPlugin } = require('@vanilla-extract/webpack-plugin');
 
 module.exports = {
 	entry: './src/index.tsx',
 	output: {
 		filename: '[name].js',
 		path: path.resolve(__dirname, 'dist'),
-		clean: false,
+		clean: true,
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: 'index.html',
 		}),
-		new VanillaExtractPlugin(),
 	],
 	module: {
 		rules: [
