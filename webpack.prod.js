@@ -19,23 +19,4 @@ module.exports = merge(common, {
 			filename: '[name].[contenthash].css',
 		}),
 	].filter(Boolean),
-	module: {
-		rules: [
-			{
-				test: /\.s?css$/,
-				use: [
-					'style-loader',
-					{
-						loader: 'css-loader',
-						options: {
-							modules: {
-								namedExport: false,
-							},
-						},
-					},
-					'sass-loader',
-				],
-			},
-		],
-	},
 });
