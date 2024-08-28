@@ -14,9 +14,7 @@
 		/* Emit */
 		"declaration": true,
 		"emitDeclarationOnly": true,
-		"outDir": "dist/cjs",
 		"declarationDir": "./dist",
-		// "outFile": "./dist/index.d.ts",
 		"noEmitOnError": true,
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
