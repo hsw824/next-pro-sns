@@ -16,17 +16,6 @@ const esmConfig = {
 	experiments: {
 		outputModule: true, // ESM 출력을 위해 필요합니다.
 	},
-	module: {
-		rules: [
-			{
-				test: /\.js$/,
-				exclude: /node_modules/,
-				use: {
-					loader: 'babel-loader', // 필요한 경우 Babel을 통해 ES6+ 코드를 변환합니다.
-				},
-			},
-		],
-	},
 	plugins: [
 		new ForkTsCheckerWebpackPlugin({
 			typescript: {
@@ -53,17 +42,6 @@ const cjsConfig = {
 		library: {
 			type: 'commonjs2',
 		},
-	},
-	module: {
-		rules: [
-			{
-				test: /\.js$/,
-				exclude: /node_modules/,
-				use: {
-					loader: 'babel-loader',
-				},
-			},
-		],
 	},
 	plugins: [
 		new ForkTsCheckerWebpackPlugin({

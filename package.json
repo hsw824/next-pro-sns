@@ -9,11 +9,10 @@
 	],
 	"scripts": {
 		"test": "echo \"test\"",
-		"build:cjs": "tsc --project tsconfig.json",
-		"build:esm": "tsc --project tsconfig.esm.json",
+		"build:tsc": "tsc --project tsconfig.json",
 		"build:babel": "babel src --out-dir dist --presets=@babel/env",
 		"build:webpack": "webpack -c ./webpack.prod.js",
-		"build": "rm -rf dist && npm run build:webpack && npm run build:cjs && npm run build:esm && npm run build:babel ",
+		"build": "rm -rf dist && npm run build:webpack && npm run build:tsc && npm run build:babel ",
 		"dev": "webpack server --open -c ./webpack.dev.js",
 		"format": "prettier --write --cache",
 		"lint": "eslint --cache src/**/*",
